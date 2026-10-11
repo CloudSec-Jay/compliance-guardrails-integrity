@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compliance engineering, preventive guardrails, evidence mapping, and software supply-chain integrity by Jason Tribble.">
+  <meta name="theme-color" content="#f5efe1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Compliance Guardrails &amp; Integrity — Jason Tribble</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="https://cloudsec-jay.github.io/cloud-ops-engineering/"><span class="dot" aria-hidden="true"></span>Jason Tribble.</a>
+    <nav aria-label="Project navigation"><a href="https://cloudsec-jay.github.io/cloud-ops-engineering/">Overview</a><a href="https://cloudsec-jay.github.io/cloud-ops-engineering/#artifacts">Projects</a><a href="./" aria-current="page">Guardrails</a></nav>
+    <a class="header-link" href="https://github.com/CloudSec-Jay/compliance-guardrails-integrity">Source ↗</a>
+  </header>
+
+  <main id="content">
+    <div class="breadcrumb"><a href="https://cloudsec-jay.github.io/cloud-ops-engineering/">Cloud Operations</a><span>/</span><span>Control Project</span><span>/</span>Compliance &amp; Integrity</div>
+
+    <article>
+      <header class="project-header">
+        <div class="title-block">
+          <p class="overline">Cloud controls / Evidence engineering</p>
+          <h1>Make the rule.<br><em>Prove the result.</em></h1>
+          <p class="lede">Preventive guardrails, policy-as-code, compliance evidence, and artifact integrity connected as one reviewable control chain.</p>
+          <div class="hero-actions"><a class="button primary" href="#control-chain">Trace the controls ↓</a><a class="button" href="https://github.com/CloudSec-Jay/compliance-guardrails-integrity">Inspect source ↗</a></div>
+        </div>
+        <aside class="control-docket" aria-label="Project control docket">
+          <div class="docket-head"><span>CONTROL DOCKET</span><strong>CGI–01</strong></div>
+          <dl>
+            <div><dt>Scope</dt><dd>AWS · Kubernetes · CI</dd></div>
+            <div><dt>Method</dt><dd>Prevent · Verify · Record</dd></div>
+            <div><dt>Evidence</dt><dd>Sanitized + immutable refs</dd></div>
+            <div><dt>State</dt><dd><span class="status-mark"></span>Controls in source</dd></div>
+          </dl>
+          <p>Not a certification or compliance claim.</p>
+        </aside>
+      </header>
+
+      <section class="premise" aria-labelledby="premise-title">
+        <p class="section-index">00 / PREMISE</p>
+        <h2 id="premise-title">A control without evidence is an intention.<br><em>Evidence without a boundary is noise.</em></h2>
+        <p>This project joins the two: state the risk, enforce a narrow rule, test both sides of it, and preserve only the record needed to support the result.</p>
+      </section>
+
+      <section class="section" id="control-chain" aria-labelledby="chain-title">
+        <div class="section-heading"><p class="section-index">01 / CONTROL CHAIN</p><h2 id="chain-title">Requirement to record</h2></div>
+        <ol class="control-chain">
+          <li><span class="chain-number">01</span><div><small>INTERPRET</small><h3>Define the risk.</h3><p>Translate a requirement into observable allowed and denied behavior.</p></div><b>RISK</b></li>
+          <li><span class="chain-number">02</span><div><small>ENFORCE</small><h3>Place the boundary.</h3><p>Use an SCP, permission boundary, admission rule, or release policy.</p></div><b>RULE</b></li>
+          <li><span class="chain-number">03</span><div><small>VERIFY</small><h3>Challenge the rule.</h3><p>Test positive, negative, failure, and rollback paths before expansion.</p></div><b>TEST</b></li>
+          <li><span class="chain-number">04</span><div><small>RECORD</small><h3>Preserve the result.</h3><p>Bind sanitized evidence to a commit, policy version, run, or digest.</p></div><b>PROOF</b></li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="workbench-title">
+        <div class="section-heading"><p class="section-index">02 / CONTROL LIBRARY</p><h2 id="workbench-title">The review desk</h2></div>
+        <div class="artifact-grid">
+          <a href="https://github.com/CloudSec-Jay/compliance-guardrails-integrity/tree/main/controls/aws"><span>A / AWS</span><h3>Organization guardrails</h3><p>SCPs and a developer permission boundary for logging, public access, root use, Regions, metadata, and escalation paths.</p><strong>Review policies ↗</strong></a>
+          <a href="https://github.com/CloudSec-Jay/compliance-guardrails-integrity/tree/main/controls/kubernetes"><span>B / OPA</span><h3>Admission policy</h3><p>A Rego rule rejects privileged application and init containers, backed by positive and negative tests.</p><strong>Inspect policy ↗</strong></a>
+          <a href="https://github.com/CloudSec-Jay/compliance-guardrails-integrity/tree/main/evidence"><span>C / EVIDENCE</span><h3>Control records</h3><p>A sanitized evidence template and cautious NIST SP 800-53 map that keeps claims tied to actual artifacts.</p><strong>Open ledger ↗</strong></a>
+          <a href="https://github.com/CloudSec-Jay/compliance-guardrails-integrity/tree/main/integrity"><span>D / INTEGRITY</span><h3>Release trust chain</h3><p>Checksums, SBOMs, digest-bound signatures, attestations, identity verification, and explicit failure handling.</p><strong>Trace provenance ↗</strong></a>
+        </div>
+      </section>
+
+      <section class="section evidence-section" aria-labelledby="evidence-title">
+        <div class="section-heading"><p class="section-index">03 / EVIDENCE STANDARD</p><h2 id="evidence-title">What the record must say</h2></div>
+        <div class="ledger" role="table" aria-label="Evidence requirements">
+          <div class="ledger-row ledger-head" role="row"><span role="columnheader">Field</span><span role="columnheader">Required record</span><span role="columnheader">Failure signal</span></div>
+          <div class="ledger-row" role="row"><strong role="cell">Boundary</strong><span role="cell">System, identity, environment, exclusions</span><em role="cell">Scope cannot be reproduced</em></div>
+          <div class="ledger-row" role="row"><strong role="cell">Version</strong><span role="cell">Commit, policy version, workflow run, digest</span><em role="cell">Evidence floats from the control</em></div>
+          <div class="ledger-row" role="row"><strong role="cell">Behavior</strong><span role="cell">Allowed, denied, failure, rollback observations</span><em role="cell">Only the happy path was tested</em></div>
+          <div class="ledger-row" role="row"><strong role="cell">Decision</strong><span role="cell">Result, reviewer, gaps, owner, next review</span><em role="cell">A scan is mistaken for approval</em></div>
+        </div>
+      </section>
+
+      <section class="section field-evidence" aria-labelledby="field-title">
+        <div class="section-heading"><p class="section-index">04 / PORTFOLIO EVIDENCE</p><h2 id="field-title">Controls under workload</h2></div>
+        <div class="field-layout">
+          <p class="field-callout">Patterns consolidated.<br><em>Workloads keep their truth.</em></p>
+          <div class="field-list">
+            <a href="https://github.com/CloudSec-Jay/cloud-ops-engineering"><span>Cloud Operations</span><p>AWS policy, CI validation, CIS remediation, SBOM and signing patterns.</p><b>↗</b></a>
+            <a href="https://github.com/CloudSec-Jay/dragonwilds-aws"><span>Dragonwilds</span><p>CIS audit decisions applied to an immutable AWS workload.</p><b>↗</b></a>
+            <a href="https://github.com/CloudSec-Jay/k8s-secops-platform"><span>SecOps Platform</span><p>File-integrity evidence and host assessment content in an operating security lab.</p><b>↗</b></a>
+            <a href="https://github.com/CloudSec-Jay/ai-ml-security"><span>AI/ML Security</span><p>Model and MCP package provenance at the agent supply-chain boundary.</p><b>↗</b></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="limits" aria-labelledby="limits-title"><p class="section-index">05 / LIMITS</p><div><h2 id="limits-title">No borrowed certainty.</h2><p>Static validation does not prove a policy works in a target environment. A framework mapping does not create compliance. A signature proves origin, not safety. Gaps stay visible until deployment evidence closes them.</p></div></section>
+
+      <footer class="project-footer"><div><p class="overline">Repository</p><h2>Inspect the control record</h2></div><div class="footer-actions"><a class="primary-link" href="https://github.com/CloudSec-Jay/compliance-guardrails-integrity">View on GitHub ↗</a><a href="https://cloudsec-jay.github.io/cloud-ops-engineering/">Portfolio overview ←</a></div></footer>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div><a class="brand" href="https://cloudsec-jay.github.io/cloud-ops-engineering/"><span class="dot" aria-hidden="true"></span>Jason Tribble.</a><p>Cloud operations. Built with intent.</p></div><div class="site-footer-links"><a href="https://cloudsec-jay.github.io/cloud-ops-engineering/">Portfolio</a><a href="https://github.com/CloudSec-Jay/compliance-guardrails-integrity">Source</a><a href="#content">Back to top ↑</a></div></footer>
+</body>
+</html>
+

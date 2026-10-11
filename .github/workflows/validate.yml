@@ -1,0 +1,29 @@
+name: Validate controls
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Parse AWS policy JSON
+        run: |
+          python3 -m json.tool controls/aws/organization-guardrails.json >/dev/null
+          python3 -m json.tool controls/aws/developer-permission-boundary.json >/dev/null
+      - name: Test checksum verifier
+        run: python3 -m unittest discover -s integrity/checksum/tests -v
+      - name: Check Python syntax
+        run: python3 -m compileall -q integrity
+

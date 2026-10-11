@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
+evidence/private/
+evidence/raw/
+*.sarif
+*.spdx.json
+
