@@ -1,5 +1,7 @@
 # Compliance Guardrails & Integrity
 
+> **Field Project 04 of the [Cloud Operations Engineering](https://github.com/CloudSec-Jay/cloud-ops-engineering) system.** Each project lives in its own repository and links back to the hub. [Portfolio site](https://cloudsec-jay.github.io/cloud-ops-engineering/) · [Project site](https://cloudsec-jay.github.io/compliance-guardrails-integrity/)
+
 Evidence-centered security engineering for cloud policy, deployment admission, benchmark remediation, and software supply-chain integrity.
 
 This repository turns requirements into reviewable controls and connects each control to a validation method. It is a portfolio project, not a claim that any organization or workload is compliant.
@@ -37,7 +39,7 @@ The CI workflow runs the checks available without cloud credentials. AWS policy 
 This project consolidates patterns proven or documented across the portfolio while keeping workload-specific implementation in its owning repository:
 
 - [Cloud Operations Engineering](https://github.com/CloudSec-Jay/cloud-ops-engineering): AWS policies, OPA, evidence templates, CIS remediation, SBOM and signing workflows.
-- [Dragonwilds on AWS](https://github.com/CloudSec-Jay/dragonwilds-aws): workload-specific CIS audit and hardening decisions.
+- [Hardened AWS Workload (Dragonwilds on AWS)](https://github.com/CloudSec-Jay/dragonwilds-aws): workload-specific CIS audit and hardening decisions.
 - [Kubernetes SecOps Platform](https://github.com/CloudSec-Jay/k8s-secops-platform): file-integrity evidence and CIS assessment content.
 - [AI/ML Security](https://github.com/CloudSec-Jay/ai-ml-security): model and MCP package integrity boundaries.
 
